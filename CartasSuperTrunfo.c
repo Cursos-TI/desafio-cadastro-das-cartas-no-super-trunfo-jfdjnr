@@ -20,6 +20,8 @@ int main(){
     printf("Digite os dados da primeira carta abaixo: \n\n");
     printf("Digite qual é estado (A a H): \n");
     scanf(" %c", &estado1);
+    estado1 = toupper(estado1);                      //Garante que a primeira letra seja maiuscula.
+
     getchar();                                       //Limpa o "\n" do buffer para corrigir um bug que não permitia a coleta do dados cidade1.
 
     printf("Digite o nome da cidade: \n");    
@@ -49,7 +51,9 @@ int main(){
     printf("\n\nDigite os dados da segunda carta abaixo: \n\n");
     printf("Digite qual é estado (A a H): \n");
     scanf(" %c", &estado2);
-    getchar();                                     ////Limpa o "\n" do buffer para corrigir um bug que não permitia a coleta do dados cidade2.   
+    estado2 = toupper(estado2);                    //Garante que a primeira letra seja maiuscula.
+
+    getchar();                                     //Limpa o "\n" do buffer para corrigir um bug que não permitia a coleta do dados cidade2.   
 
     printf("Digite o nome da cidade: \n");         
     fgets(cidade2, sizeof(cidade2), stdin);        //Foi adicionado fgets pois o scanf nao permitia espaço na string, assim, cidades como São Paulo não funcionava.
