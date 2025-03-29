@@ -9,7 +9,7 @@ int main(){
     float densidade1, densidade2, pibp1, pibp2;    
     int turisticos1, turisticos2, populacao1, populacao2;
     int codigo1, codigo2;                      
-    double conv1, conv2;                             //conv1 e 2 foi criado para converter o pib1 e 2 e bilhoes de reais, por estar multiplicando foi criado em double.
+    double conv1, conv2;                             //conv1 e 2 foi criado para converter o pib1 e 2 em bilhoes de reais, por estar multiplicando foi criado em double.
 
     // Tela de boas vindas
     printf("Bem vindo ao Super Trunfo! \n");
