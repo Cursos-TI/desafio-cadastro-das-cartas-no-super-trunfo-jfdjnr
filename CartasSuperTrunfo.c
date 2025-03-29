@@ -6,9 +6,10 @@ int main(){
     char estado1, estado2;
     char cidade1[30], cidade2[30];
     float area1, area2, pib1, pib2;
-    float densidade1, densidade2, pibp1, pibp2, conv1, conv2;    //conv1 e 2 foi criado para converter o pib1 e 2 e bilhoes de reais.
+    float densidade1, densidade2, pibp1, pibp2;    
     int turisticos1, turisticos2, populacao1, populacao2;
-    int codigo1, codigo2;
+    int codigo1, codigo2;                      
+    double conv1, conv2;                             //conv1 e 2 foi criado para converter o pib1 e 2 e bilhoes de reais, por estar multiplicando foi criado em double.
 
     // Tela de boas vindas
     printf("Bem vindo ao Super Trunfo! \n");
@@ -18,10 +19,12 @@ int main(){
     //Coleta de dados carta 01
     printf("Digite os dados da primeira carta abaixo: \n\n");
     printf("Digite qual é estado (A a H): \n");
-    scanf("%c", &estado1);
+    scanf(" %c", &estado1);
+    getchar();                                       //Limpa o "\n" do buffer para corrigir um bug que não permitia a coleta do dados cidade1.
 
     printf("Digite o nome da cidade: \n");    
-    scanf("%s", &cidade1);
+    fgets(cidade1, sizeof(cidade1), stdin);          //Foi adicionado fgets pois o scanf nao permitia espaço na string, assim, cidades como São Paulo não funcionava.
+    cidade1[strcspn(cidade1, "\n")] = '\0';          //Remove o "\n" gerado pelo fgets.
 
     printf("Digite o código da carta (01 a 04): \n");    
     scanf("%2d", &codigo1);
@@ -38,17 +41,19 @@ int main(){
     printf("Digite o numero de pontos turisticos da cidade: \n");
     scanf("%d", &turisticos1);
 
-    conv1 = 1000000000 * (pib1);              //Converte o valor pib1 em bilhoes de reais.
-    densidade1 = (populacao1 / area1);        //Calcula a densidade populacional carta 1.
-    pibp1 = (conv1 / populacao1);             //Calcula o PIB per capita da carta 1.
+    conv1 = 1000000000 * (pib1);                    //Converte o valor pib1 em bilhoes de reais.
+    densidade1 = (populacao1 / area1);              //Calcula a densidade populacional carta 1.
+    pibp1 = (conv1 / populacao1);                   //Calcula o PIB per capita da carta 1.
 
     //Coleta de dados carta 02
     printf("\n\nDigite os dados da segunda carta abaixo: \n\n");
     printf("Digite qual é estado (A a H): \n");
     scanf(" %c", &estado2);
+    getchar();                                     ////Limpa o "\n" do buffer para corrigir um bug que não permitia a coleta do dados cidade2.   
 
-    printf("Digite o nome da cidade: \n");    
-    scanf("%s", &cidade2);
+    printf("Digite o nome da cidade: \n");         
+    fgets(cidade2, sizeof(cidade2), stdin);        //Foi adicionado fgets pois o scanf nao permitia espaço na string, assim, cidades como São Paulo não funcionava.
+    cidade2[strcspn(cidade2, "\n")] = '\0';        //Remove "\n" atribuido pelo fgets.
 
     printf("Digite o código da carta (01 a 04): \n");    
     scanf("%2d", &codigo2);
