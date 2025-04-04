@@ -13,7 +13,7 @@ int main(){
     int codigo1, codigo2, respop, resarea, respib,   //variaveis "res" siginifica resultado, logo exp: "respop" = "resultato população".
     restur, resden, resper, ressup;   
     unsigned int carta;                   
-    double conv1, conv2;                             //conv1 e 2 foi criado para converter o pib1 e 2 em bilhoes de reais, por estar multiplicando foi criado em double.
+    unsigned long long int conv1, conv2;                             //conv1 e 2 foi criado para converter o pib1 e 2 em bilhoes de reais, por estar multiplicando foi criado em double.
 
     // Tela de boas vindas
     printf("Bem vindo ao Super Trunfo! \n");
